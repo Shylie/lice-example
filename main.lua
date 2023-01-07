@@ -12,7 +12,7 @@ function love.load()
 	for x = 1, 9 do
 		for y = 1, 9 do
 			for z = 1, 9, 1 do
-				map:setTile(x, y, z, z % 2 == 0 and 1 or 9)
+				map:setTile(x, y, z, love.math.random(1, 5))
 			end
 		end
 	end
@@ -20,18 +20,18 @@ function love.load()
 	canvas = love.graphics.newCanvas(320, 320)
 	canvas:setFilter("nearest", "nearest", 0)
 
-	curZ = -1
+	curZ = 1
 end
 
 function love.update(dt)
 	canvas:renderTo(function()
 		love.graphics.rectangle("fill", 0, 0, 320, 320)
-		map:draw(160, 160, 5, 5, 5, 5, 5, math.floor(curZ))
+		map:draw(160, 160, 9, 9, 2, 5, 5, math.floor(curZ))
 	end)
 
 	curZ = curZ + 2 * dt
-	if curZ > 12 then
-		curZ = -1
+	if curZ > 11 then
+		curZ = 1
 	end
 end
 
