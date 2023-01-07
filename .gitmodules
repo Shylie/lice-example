@@ -1,0 +1,3 @@
+[submodule "lib/lice"]
+	path = lib/lice
+	url = https://github.com/Shylie/lice.git
