@@ -7,7 +7,7 @@ function love.load()
 	love.window.setMode(640, 640, { fullscreen = false, resizable = false })
 
 	local atlas = love.graphics.newImage('tiles.png')
-	map = lice.new(9, 9, 9, atlas, 16, 16)
+	map = lice.new(9, 9, 9, atlas, 16, 17)
 
 	for x = 1, 9 do
 		for y = 1, 9 do
